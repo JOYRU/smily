@@ -36,5 +36,18 @@ private static int playercard1, playercard2, dealercard1, dealercard2, playercar
 		System.out.println();
 	}
 	
+	
+	public static void dealerhit()
+	{
+		System.out.println("Dealer chooses to hit.");
+		int dealercard = (int) (Math.random() * 9 + 2);
+		System.out.println("He draws a " + dealercard + ".");
+		dealercardtotal += dealercard;
+		System.out.println("His total is " + dealercardtotal);
+		System.out.println();
+		
+	}
+	
+	
 
 }
