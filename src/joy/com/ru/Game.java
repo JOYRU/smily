@@ -48,6 +48,68 @@ private static int playercard1, playercard2, dealercard1, dealercard2, playercar
 		
 	}
 	
+
+	public static void main(String[] args)
+	{
+		initialPlayerCards();
+		
+		if(playercardtotal > 21)
+			System.out.println("DEALER WINS!");
+		
+		else
+		{	
+			
+			initialDealerCards();
+			System.out.println("Would you like to hit or stay?(h/s)");
+			Scanner s = new Scanner(System.in);
+			String str = s.next();
+			
+			while(str.charAt(0) != 's')
+			{
+					
+				if(str.charAt(0) == 'h')
+					playerhit();
+					
+				if(playercardtotal > 21)
+					{
+						System.out.println("DEALER WINS!");
+						break;
+					}
+					
+				else if(str.charAt(0) != 'h' && str.charAt(0) != 's')
+					{	
+						System.out.println("Wrong format, please type 'h' or 's':");
+					}
+					
+				System.out.println("Would you like to hit or stay?(h/s)");
+				str = s.next();
+			}
+			if(playercardtotal <= 21)
+			{
+				System.out.println("Okay, dealer's turn.");
+				while(dealercardtotal < 16)
+				{
+					dealerhit();
+					if(dealercardtotal > 21)
+						System.out.println("YOU WIN!");
+				}
+				if(dealercardtotal <= 21)
+				{
+					System.out.println("Dealer stays.");
+					System.out.println();
+					System.out.println("Dealer's total is " + dealercardtotal);
+					System.out.println("Your total is " + playercardtotal);
+					if(dealercardtotal >= playercardtotal)
+					{
+						System.out.println("DEALER WINS!");
+					}
+					else
+						System.out.println("YOU WIN!");
+				}
+			}
+		}
+	}
+	
 	
 
 }
