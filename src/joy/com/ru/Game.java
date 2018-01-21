@@ -26,5 +26,15 @@ private static int playercard1, playercard2, dealercard1, dealercard2, playercar
 		System.out.println();
 	}
 	
+	public static void initialDealerCards()
+	{
+		dealercard1 = (int) (Math.random() * 9 + 2);
+		dealercard2 = (int) (Math.random() * 9 + 2);
+		dealercardtotal = dealercard1 + dealercard2;
+		System.out.println("The dealer has a " + dealercard1 + " showing and the other card hidden.");
+		System.out.println("His total is hidden, too.");
+		System.out.println();
+	}
+	
 
 }
